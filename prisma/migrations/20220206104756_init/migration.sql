@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE "Movie" (
-    "id" SERIAL NOT NULL,
+    "id" SERIAL NOT NULL, 
     "title" TEXT NOT NULL,
     "year" INTEGER NOT NULL,
     "genre" TEXT,
