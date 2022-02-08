@@ -1,3 +1,10 @@
+//dotenv실행 app의 맨 위에서
+//https://www.npmjs.com/package/dotenv
+require('dotenv').config();
+    //import dotenv from "dotenv"
+    //dotenv.config()
+    //이 두 줄 코드와 동일함
+
 import {ApolloServer} from "apollo-server";
 import {ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 // import { typeDefs, resolvers } from "./schema"; 
@@ -11,5 +18,7 @@ const server = new ApolloServer({
     plugins: [ApolloServerPluginLandingPageGraphQLPlayground()], //있어야 playground 작동 가능
 });
 
+const PORT = process.env.PORT; //4000포트 접근 가능(따로 import필요 x)
 
-server.listen().then(()=> console.log("Server is running on http://localhost:4000/"))
+server.listen(PORT)
+    .then(()=> console.log(`🚀Server is running on http://localhost:${PORT}/`))
